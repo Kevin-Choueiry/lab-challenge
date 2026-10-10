@@ -1,0 +1,141 @@
+/* CampusEvents – solution stylesheet (S01-E1) */
+
+/* 1. Design tokens: one place to change colors and spacing */
+:root {
+  --color-text: #1a1a1a;
+  --color-bg: #ffffff;
+  --color-surface: #e9edee;
+  --color-primary: #1a9988;
+  --color-accent: #eb5600;
+  --color-muted: #595959;
+  --radius: 8px;
+  --gap: 16px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--color-text);
+  background: var(--color-bg);
+  line-height: 1.5;
+}
+
+/* 2. Header: Flexbox puts the brand left and the links right */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--gap) 24px;
+  background: var(--color-surface);
+}
+
+.brand {
+  font-weight: bold;
+  font-size: 1.25rem;
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.site-nav {
+  display: flex;
+  gap: var(--gap);
+}
+
+.site-nav a {
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.site-nav a:hover {
+  color: var(--color-accent);
+}
+
+.site-main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.hero h1 {
+  margin-bottom: 4px;
+}
+
+/* 3. Cards: Grid creates as many 260px+ columns as fit */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: var(--gap);
+}
+
+.card {
+  border: 1px solid #ddd;
+  border-radius: var(--radius);
+  padding: var(--gap);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.card h3 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.meta {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 0.9rem;
+}
+
+.seats {
+  margin: 0;
+  font-weight: bold;
+  color: var(--color-primary);
+}
+
+.seats-full {
+  color: var(--color-accent);
+}
+
+.badge {
+  align-self: flex-start;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--color-surface);
+}
+
+.badge-tech   { background: #d7f1ec; color: #0f6b5f; }
+.badge-sports { background: #ffe1d3; color: #a63c00; }
+.badge-career { background: #dbe7f3; color: #1c3678; }
+
+.site-footer {
+  padding: var(--gap) 24px;
+  background: var(--color-surface);
+  font-size: 0.875rem;
+  color: var(--color-muted);
+}
+
+/* 4. Responsive: under 600px the header stacks vertically */
+@media (max-width: 600px) {
+  .site-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
+
+/* S01-E3 additions */
+.status { color: var(--color-muted); margin: 0 0 var(--gap); }
+.status-error { color: var(--color-accent); font-weight: bold; }
+.summary { margin: 0 0 var(--gap); font-weight: bold; }
+
+/* Lab challenge additions */
+.toolbar { display: flex; gap: var(--gap); align-items: center; margin-bottom: var(--gap); }
+select { font: inherit; padding: 6px 10px; border-radius: var(--radius); border: 1px solid #bbb; }

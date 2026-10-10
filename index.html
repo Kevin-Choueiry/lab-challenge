@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CampusEvents – Lab challenge</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/">CampusEvents</a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="#events">Events</a>
+      <a href="#about">About</a>
+      <a href="#login">Login</a>
+    </nav>
+  </header>
+
+  <main class="site-main">
+    <section id="events" class="events" aria-labelledby="events-title">
+      <h2 id="events-title">Upcoming events</h2>
+      <div class="toolbar">
+        <label for="category">Category</label>
+        <select id="category">
+          <option value="all">All</option>
+        </select>
+        <span id="count" class="status"></span>
+      </div>
+      <p id="status" class="status">Loading…</p>
+      <div id="card-grid" class="card-grid"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>IN432 – Advanced Web Technologies · CampusEvents demo</p>
+  </footer>
+
+  <!-- type="module" enables import / export and defers execution -->
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
